@@ -10,6 +10,20 @@ const mobileOverlay = document.querySelector(".mobile-overlay");
 const closeMobileNav = document.querySelector(".closeMobileNav");
 
 // event listeners 
+
+function watchBreakpoint(x) {
+  if (x.matches) { 
+    pagesNav.style.display = "flex";
+    mobileOverlay.style.display = "none"
+  } else {
+    pagesNav.style.display = "none"
+  }
+}
+
+let breakpoint = window.matchMedia("(min-width: 992px)")
+watchBreakpoint(breakpoint) // Call listener function at run time
+breakpoint.addListener(watchBreakpoint) // Attach listener function on state changes
+
 hamburgerBtn.addEventListener("click", () => {
   pagesNav.style.display = "flex";
   mobileOverlay.style.display = "block"
