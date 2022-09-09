@@ -71,13 +71,25 @@ productsTitles.forEach(title => {
   })
 })
 
+// window scroll 
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+        document.querySelector(".header-bottom").classList.add("fixed")
+    } else {
+      document.querySelector(".header-bottom").classList.remove("fixed")
+    }
+}
+
 // slider 
 
 let swiper = new Swiper(".mySwiper", {
   slidesPerView: "auto",
   spaceBetween: 50,
-  keyboardControl: true,
-  allowTouchMove: true,
+  // keyboardControl: true,
+  // allowTouchMove: true,
   // lazy: true,
   // loop: true,
   pagination: {

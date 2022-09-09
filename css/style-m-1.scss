@@ -10,7 +10,7 @@ $green: #91B40D;
 body {
   font-family: 'Cormorant Garamond', serif;
   overflow-x: hidden;
-  width: 100%
+  width: 100%;
 }
 
 a {
@@ -83,12 +83,25 @@ header {
     grid-template-columns: 3fr 9fr;
     justify-content: space-between;
     padding-top: 10px;
+
+    &.fixed {
+      background-color: #1a5221;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      border-bottom: 2px solid #FFBF00;
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+      padding: 20px 100px;
+    }
   }
 
   nav {
     display: flex;
     justify-content: flex-end;
     align-items: center; 
+
 
     .mobileNavLinks {
       display: none
@@ -969,6 +982,7 @@ html,
 body {
   position: relative;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .swiper {

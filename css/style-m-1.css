@@ -78,6 +78,17 @@ header .header-bottom {
   justify-content: space-between;
   padding-top: 10px;
 }
+header .header-bottom.fixed {
+  background-color: #1a5221;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-bottom: 2px solid #FFBF00;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  padding: 20px 100px;
+}
 header nav {
   display: flex;
   justify-content: flex-end;
@@ -842,6 +853,7 @@ html,
 body {
   position: relative;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .swiper {
