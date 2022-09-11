@@ -1,5 +1,3 @@
-
-
 // dom elements
 const productsTitles = document.querySelectorAll(".products li");
 const gridItems = document.querySelectorAll(".products .grid-item");
@@ -73,27 +71,14 @@ productsTitles.forEach((title) => {
 
 // window scroll
 
-window.onscroll = function () {
-  scrollFunction();
-  console.log("window scrolled")
-};
-
 window.addEventListener("scroll", () => {
-  console.log("scrolled")
-  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
     document.querySelector(".header-bottom").classList.add("fixed");
   } else {
     document.querySelector(".header-bottom").classList.remove("fixed");
   }
 })
 
-function scrollFunction() {
-  if (document.body.scrollTop > 0) {
-    document.querySelector(".header-bottom").classList.add("fixed");
-  } else {
-    document.querySelector(".header-bottom").classList.remove("fixed");
-  }
-}
 
 // slider
 
@@ -106,6 +91,3 @@ let swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
-
-// lightbox
-

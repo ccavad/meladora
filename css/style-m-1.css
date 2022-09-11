@@ -36,7 +36,7 @@ header {
   padding: 30px 110px;
   color: white;
   position: relative;
-  margin-bottom: 200px;
+  margin-bottom: 230px;
 }
 header .header-banner {
   position: absolute;
@@ -141,13 +141,6 @@ header nav li.active {
 header nav li.active a:hover {
   color: white;
 }
-header nav li.active::after {
-  content: "";
-  background-image: url("images/Group 438.png");
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
 header nav button {
   background-color: transparent;
   color: white;
@@ -250,7 +243,8 @@ section {
 .about .section-banner {
   position: absolute;
   left: 0;
-  top: -50px;
+  top: 50%;
+  transform: translateY(-50%);
   height: 700px;
   z-index: 10;
 }
@@ -584,6 +578,7 @@ footer .footer-container .menus li.title {
     width: 100%;
     height: 400px;
     margin-bottom: 30px;
+    transform: translateY(0);
   }
   .about div:nth-of-type(1) {
     display: none;
@@ -754,6 +749,10 @@ footer .footer-container .menus li.title {
 .gallery .grid .grid-item {
   width: 360px;
   height: 330px;
+}
+.gallery .grid .grid-item img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -865,7 +864,6 @@ footer .footer-container .menus li.title {
 html,
 body {
   position: relative;
-  height: 100%;
   overflow-x: hidden;
 }
 
