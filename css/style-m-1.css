@@ -53,6 +53,9 @@ header .header-banner img {
      object-position: top center;
   filter: brightness(0.5);
 }
+header .phonelink i {
+  color: #91B40D;
+}
 header .header-top {
   display: flex;
   justify-content: space-between;
@@ -74,7 +77,7 @@ header .header-top ul li:hover {
 }
 header .header-bottom {
   display: grid;
-  grid-template-columns: 3fr 9fr;
+  grid-template-columns: 2fr 10fr;
   justify-content: space-between;
   padding-top: 10px;
 }
@@ -87,7 +90,10 @@ header .header-bottom.fixed {
   z-index: 99;
   border-bottom: 2px solid #FFBF00;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-  padding: 20px 100px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 header nav {
   display: flex;
@@ -372,6 +378,10 @@ section {
 }
 .products .grid .grid-item {
   width: 200px;
+  transition: 0.4s;
+}
+.products .grid .grid-item:hover {
+  scale: 1.1;
 }
 .products .grid .grid-item .info {
   background-color: white;
@@ -440,6 +450,7 @@ footer {
   position: relative;
   margin-top: 50px;
   padding: 300px 100px 0;
+  background-size: cover;
 }
 footer small {
   font-size: 14px;
@@ -489,9 +500,9 @@ footer .footer-container .menus li.title {
   font-weight: bold;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1250px) {
   header, section, footer {
-    padding-inline: 50px;
+    padding-inline: 50px !important;
   }
   .pages-nav {
     position: fixed;
@@ -608,22 +619,6 @@ footer .footer-container .menus li.title {
   .blogs .grid .grid-item:nth-child(odd) {
     transform: translateY(0px);
   }
-  footer .footer-container {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 40px;
-    padding-bottom: 20px;
-    text-align: center;
-  }
-  footer .footer-container .menus {
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    gap: 15px;
-  }
-  footer .footer-container .menus ul {
-    gap: 10px;
-    margin-bottom: 15px;
-  }
   .services .grid {
     grid-template-columns: 1fr !important;
     gap: 50px !important;
@@ -641,11 +636,40 @@ footer .footer-container .menus li.title {
   .services-section h2 {
     text-align: center;
   }
-  .services-section .grid img {
-    display: none;
+  .services-section .grid-row {
+    flex-direction: column;
+  }
+  .services-section .grid-row:nth-of-type(2) {
+    flex-direction: column;
+    align-items: normal;
+  }
+  .services-section .grid-row img {
+    width: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  footer .footer-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  footer .footer-container .menus {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+  footer .footer-container .menus ul {
+    gap: 10px;
+    margin-bottom: 15px;
   }
 }
 @media (max-width: 756px) {
+  .header-bottom.fixed {
+    padding: 15px 20px !important;
+  }
   .contact {
     align-items: center;
   }
@@ -743,44 +767,33 @@ footer .footer-container .menus li.title {
   font-weight: bold;
 }
 .services-section .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;
-}
-.services-section .grid .grid-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-.services-section .grid .grid-row img {
-  width: 570px;
-  height: 370px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.services-section .grid .grid-row:nth-of-type(2) {
-  flex-direction: row-reverse;
-}
-.services-section .grid .grid-row:nth-of-type(2) .grid-item-info {
-  align-items: flex-end;
-}
-.services-section .grid .grid-row .grid-item-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 }
-.services-section .grid .grid-row .grid-item-info h3 {
-  font-size: 24px;
+.services-section .grid .grid-row {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  gap: 20px;
 }
-.services-section .grid .grid-row .grid-item-info p {
-  font-size: 16px;
+.services-section .grid .grid-row:nth-of-type(2) {
+  grid-auto-flow: dense;
 }
-.services-section .grid .grid-row .grid-item-info img {
-  max-width: 84px;
-  max-height: 84px;
+.services-section .grid .grid-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services-section .grid .grid-item-info img {
+  width: 84px;
+  height: 84px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.services-section .grid .grid-item-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 570px;
+  height: 370px;
 }
 
 .social {
